@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans", "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.625rem;
+
+    /* Background: pure white */
+    --background: 1.0 0 0;
+    --foreground: 0.14 0.04 255;
+
+    /* Card: very slightly off-white */
+    --card: 0.985 0.005 240;
+    --card-foreground: 0.14 0.04 255;
+    --popover: 0.985 0.005 240;
+    --popover-foreground: 0.14 0.04 255;
+
+    /* Primary: dark navy */
+    --primary: 0.22 0.06 255;
+    --primary-foreground: 0.98 0.005 240;
+
+    /* Secondary: light navy tint */
+    --secondary: 0.94 0.015 240;
+    --secondary-foreground: 0.22 0.06 255;
+
+    /* Muted: barely-there navy tint */
+    --muted: 0.95 0.01 240;
+    --muted-foreground: 0.5 0.025 240;
+
+    /* Accent: warm orange — used ONLY on CTAs */
+    --accent: 0.62 0.19 38;
+    --accent-foreground: 0.99 0.005 60;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.91 0.012 240;
+    --input: 0.96 0.01 240;
+    --ring: 0.22 0.06 255;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.985 0.005 240;
+    --sidebar-foreground: 0.14 0.04 255;
+    --sidebar-primary: 0.22 0.06 255;
+    --sidebar-primary-foreground: 0.98 0.005 240;
+    --sidebar-accent: 0.94 0.015 240;
+    --sidebar-accent-foreground: 0.22 0.06 255;
+    --sidebar-border: 0.91 0.012 240;
+    --sidebar-ring: 0.22 0.06 255;
+  }
+
+  .dark {
+    --background: 0.145 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.18 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.22 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.8 0 0;
+    --primary-foreground: 0.145 0 0;
+
+    --secondary: 0.22 0 0;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.22 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.72 0.19 38;
+    --accent-foreground: 0.145 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.145 0 0;
+
+    --border: 0.28 0 0;
+    --input: 0.28 0 0;
+    --ring: 0.8 0 0;
+
+    --chart-1: 0.49 0.24 264;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.18 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.8 0 0;
+    --sidebar-primary-foreground: 0.145 0 0;
+    --sidebar-accent: 0.22 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.28 0 0;
+    --sidebar-ring: 0.8 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0
+      rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-hover {
+    box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0
+      rgba(0, 0, 0, 0.06);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tech badge color overrides using CSS custom properties — no raw Tailwind palette classes */
+  .badge-react {
+    background: oklch(0.95 0.03 220);
+    color: oklch(0.35 0.12 220);
+    border-color: oklch(0.85 0.05 220);
+  }
+  .badge-js {
+    background: oklch(0.96 0.05 90);
+    color: oklch(0.4 0.12 90);
+    border-color: oklch(0.88 0.08 90);
+  }
+  .badge-python {
+    background: oklch(0.95 0.04 145);
+    color: oklch(0.38 0.12 145);
+    border-color: oklch(0.85 0.07 145);
+  }
+  .badge-node {
+    background: oklch(0.95 0.05 150);
+    color: oklch(0.36 0.14 150);
+    border-color: oklch(0.85 0.08 150);
+  }
+  .badge-html {
+    background: oklch(0.96 0.04 45);
+    color: oklch(0.42 0.14 45);
+    border-color: oklch(0.88 0.07 45);
+  }
+  .badge-css {
+    background: oklch(0.95 0.04 280);
+    color: oklch(0.4 0.12 280);
+    border-color: oklch(0.85 0.07 280);
+  }
+}

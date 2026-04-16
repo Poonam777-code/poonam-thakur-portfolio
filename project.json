@@ -1,0 +1,23 @@
+{
+  "overview": "A modern, high-converting personal portfolio landing page for Poonam Thakur — Web & Application Developer and AI Enthusiast. Features a hero section with tech badges, skills grid, project showcase, and contact form with a clean white and dark blue design.",
+  "features": [
+    "Hero section with headline, subtext, and call-to-action buttons",
+    "Tech stack badges (React.js, JavaScript, Python, Node.js, HTML, CSS)",
+    "Professional About section with bio",
+    "Skills grid organized by category with icons",
+    "Project cards with hover effects for 3 portfolio projects",
+    "Contact form with email link and Hire Me CTA",
+    "Sticky navigation with smooth scrolling",
+    "Footer with LinkedIn placeholder and copyright"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "developer",
+    "landing-page",
+    "react",
+    "web-development",
+    "ai"
+  ],
+  "last_updated": "2026-04-16T10:44:24.333Z"
+}
